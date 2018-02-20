@@ -53,8 +53,8 @@ void Item::ItemDrop()
 {
 	srand(time(NULL));
 
-	int x = 2 + (rand() % (GAMECONST::WIDTH - 2));
-	int y = 3 + (rand() % (GAMECONST::HEIGHT - 4));
+	int x = 2 + (rand() % (GAMECONST::WIDTH - 3));
+	int y = 3 + (rand() % (GAMECONST::HEIGHT - 5));
 
 	this->SetPosition(GAMECONST::DROP, x, y);
 }
