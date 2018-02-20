@@ -28,6 +28,16 @@ void SetColor(int color, int bgcolor)
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), (bgcolor << 4) | color);
 }
 
+void GAMEFUNCTION::GameManager::DeleteManager()
+{
+	if (managerInstance != nullptr)
+	{
+		delete managerInstance;
+		managerInstance = nullptr;
+	}
+}
+
+
 void GAMEFUNCTION::GameManager::AddScore(int score)
 {
 	this->score += score;
@@ -69,22 +79,22 @@ void GAMEFUNCTION::GameManager::Render()
 			if(type == WALL)
 			{ 
 				SetColor(7, 0);
-				std::cout << "¢Ã";
+				std::cout << "â–£";
 			}
 			if (type == HEAD)
 			{
 				SetColor(10, 0);
-				std::cout << "¡İ";
+				std::cout << "â—";
 			}
 			if (type == TAIL)
 			{
 				SetColor(9, 0);
-				std::cout << "¢Â";
+				std::cout << "â—ˆ";
 			}
 			if (type == ITEM)
 			{
 				SetColor(13, 0);
-				std::cout << "¢¾";
+				std::cout << "â™¥";
 			}
 		}
 		std::cout << std::endl;
@@ -92,7 +102,7 @@ void GAMEFUNCTION::GameManager::Render()
 
 	gotoxy(WIDTH + 3, (HEIGHT / 2)-9);
 	SetColor(14, 0);
-	std::cout << "Á¡¼ö: " << this->score;
+	std::cout << "ì ìˆ˜: " << this->score;
 }
 
 void GAMEFUNCTION::GameManager::SetGameState(bool type)
@@ -161,7 +171,7 @@ void GAMEFUNCTION::GameManager::ItemRemove()
 void GAMEFUNCTION::GameManager::Init()
 {
 	using namespace GAMECONST;
-	system("title Áö··ÀÌ°ÔÀÓ - v1.0 [°³¹ßÀÚ: ³²´ë¿µ]");
+	system("title ì§€ë ì´ê²Œì„ - v1.0 [ê°œë°œì: ë‚¨ëŒ€ì˜]");
 	VisibleCursor(false);
 	bool screenState = true;
 	while (true)
@@ -171,7 +181,7 @@ void GAMEFUNCTION::GameManager::Init()
 		{
 			gotoxy((WIDTH / 2) + 5, (HEIGHT / 2) - 5);
 			SetColor(15, 0);
-			std::cout << "¡æ Áö··ÀÌ °ÔÀÓ ¡ç";
+			std::cout << "â†’ ì§€ë ì´ ê²Œì„ â†";
 			gotoxy((WIDTH / 2) + 6, (HEIGHT / 2) - 2);
 			SetColor(15, 0);
 			std::cout << "Press any key!";
@@ -181,7 +191,7 @@ void GAMEFUNCTION::GameManager::Init()
 		{
 			gotoxy((WIDTH / 2) + 5, (HEIGHT / 2) - 5);
 			SetColor(11, 0);
-			std::cout << "¡æ Áö··ÀÌ °ÔÀÓ ¡ç";
+			std::cout << "â†’ ì§€ë ì´ ê²Œì„ â†";
 			gotoxy((WIDTH / 2) + 6, (HEIGHT / 2) - 2);
 			SetColor(15, 0);
 			std::cout << "Press any key!";
