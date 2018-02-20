@@ -44,7 +44,7 @@ namespace GAMECONST
 namespace GAMEFUNCTION
 {
 
-	class GameObject /* ¿ÀºêÁ§Æ® Ãß»ó Å¬·¡½º */
+	class GameObject /* ì˜¤ë¸Œì íŠ¸ ì¶”ìƒ í´ë˜ìŠ¤ */
 	{
 	protected:
 		int locX, locY;
@@ -60,7 +60,7 @@ namespace GAMEFUNCTION
 		virtual std::string type() = 0;
 	};
 
-	class Move /* ¿òÁ÷ÀÌ´Â ¿ÀºêÁ§Æ® Ãß»ó Å¬·¡½º */
+	class Move /* ì›€ì§ì´ëŠ” ì˜¤ë¸Œì íŠ¸ ì¶”ìƒ í´ë˜ìŠ¤ */
 	{
 	public:
 		virtual void MoveLeft() = 0;
@@ -227,18 +227,19 @@ namespace GAMEFUNCTION
 		}
 
 	public:
-		void Render(); /* ¸ÊÀ» ·»´õ¸µ ÇÕ´Ï´Ù. */
-		GAMECONST::GAMEENUM GetMapType(int x, int y); /* ÇØ´ç ÁÂÇ¥ÀÇ GAMEENUM À» ¹Ş¾Æ¿É´Ï´Ù.*/
-		void SetGameState(bool state); /* °ÔÀÓ»óÅÂ¸¦ ¹Ù²ß´Ï´Ù. */
-		bool GetGameState() const; /* °ÔÀÓ»óÅÂ¸¦ °¡Á®¿É´Ï´Ù.*/
-		bool CreateWorm(); /* Áö··ÀÌ¸¦ »ı¼ºÇÕ´Ï´Ù. 1È¸ »ı¼º¹Û¿¡ ¾ÈµË´Ï´Ù. */
-		void Start(); /* °ÔÀÓÀ» ½ÃÀÛÇÕ´Ï´Ù. */
-		bool WormCheck(); /* Áö··ÀÌÀÇ ¸Ó¸®°¡ ºÎµúÇû´ÂÁö Ã¼Å©ÇÕ´Ï´Ù. */
-		void CreateItem(); /* ¾ÆÀÌÅÛÀ» »ı¼ºÇÕ´Ï´Ù. */
-		void ItemRemove(); /* ¾ÆÀÌÅÛÀ» »èÁ¦ÇÕ´Ï´Ù. */
-		bool WormBodyCheck(); /* Áö··ÀÌÀÇ ¸Ó¸®°¡ ¸ö¿¡ ºÎµúÇû´ÂÁö Ã¼Å©ÇÕ´Ï´Ù. !(WormCheck() ÄÚµå°¡ ±æ¾îÁö¹Ç·Î ÇÔ¼ö·Î »­)*/
+		void Render(); /* ë§µì„ ë Œë”ë§ í•©ë‹ˆë‹¤. */
+		GAMECONST::GAMEENUM GetMapType(int x, int y); /* í•´ë‹¹ ì¢Œí‘œì˜ GAMEENUM ì„ ë°›ì•„ì˜µë‹ˆë‹¤.*/
+		void SetGameState(bool state); /* ê²Œì„ìƒíƒœë¥¼ ë°”ê¿‰ë‹ˆë‹¤. */
+		bool GetGameState() const; /* ê²Œì„ìƒíƒœë¥¼ ê°€ì ¸ì˜µë‹ˆë‹¤.*/
+		bool CreateWorm(); /* ì§€ë ì´ë¥¼ ìƒì„±í•©ë‹ˆë‹¤. 1íšŒ ìƒì„±ë°–ì— ì•ˆë©ë‹ˆë‹¤. */
+		void Start(); /* ê²Œì„ì„ ì‹œì‘í•©ë‹ˆë‹¤. */
+		bool WormCheck(); /* ì§€ë ì´ì˜ ë¨¸ë¦¬ê°€ ë¶€ë”ªí˜”ëŠ”ì§€ ì²´í¬í•©ë‹ˆë‹¤. */
+		void CreateItem(); /* ì•„ì´í…œì„ ìƒì„±í•©ë‹ˆë‹¤. */
+		void ItemRemove(); /* ì•„ì´í…œì„ ì‚­ì œí•©ë‹ˆë‹¤. */
+		bool WormBodyCheck(); /* ì§€ë ì´ì˜ ë¨¸ë¦¬ê°€ ëª¸ì— ë¶€ë”ªí˜”ëŠ”ì§€ ì²´í¬í•©ë‹ˆë‹¤. !(WormCheck() ì½”ë“œê°€ ê¸¸ì–´ì§€ë¯€ë¡œ í•¨ìˆ˜ë¡œ ëºŒ)*/
 		void AddScore(int score);
-		void Init(); /* °ÔÀÓ ½ÃÀÛÀü ÁØºñÃ¢ */
+		void Init(); /* ê²Œì„ ì‹œì‘ì „ ì¤€ë¹„ì°½ */
+		void DeleteManager(); /* ì‹±ê¸€í†¤ í•´ì œ */
 	};
 }
 
